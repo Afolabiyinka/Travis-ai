@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatedGradientText } from "@/components/modern-ui/animated-gradient-text";
 import { motion, AnimatePresence } from "framer-motion";
-import { excuseSuggestions } from "@/lib/Random";
 import { ExcuseGrid } from "@/components/custom/ExcuseCard";
 
 const AiHome = () => {
@@ -17,7 +16,7 @@ const AiHome = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % phrases.length);
-    }, 4000); // 🔥 rotate every 4s for flow
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 

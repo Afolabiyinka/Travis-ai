@@ -81,7 +81,7 @@ export const FluidDropdown = ({
               role="menu"
             >
               <motion.div layout className="relative space-y-1">
-                {categories.map((cat, index) => (
+                {categories.map((cat) => (
                   <motion.button
                     key={cat.id}
                     className={cn(
@@ -112,8 +112,8 @@ export const FluidDropdown = ({
                       />
                     )}
 
-                    <cat.icon className="w-4 h-4 mr-2 relative z-[2]" />
-                    <span className="relative z-[2]">{cat.label}</span>
+                    <cat.icon className="w-4 h-4 mr-2 relative z-2" />
+                    <span className="relative z-2">{cat.label}</span>
                   </motion.button>
                 ))}
               </motion.div>

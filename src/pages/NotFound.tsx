@@ -1,13 +1,8 @@
-import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Flag } from "lucide-react";
-import React from "react";
+import { Flag } from "lucide-react";
 import CustomBtn from "@/components/custom/CustomBtn";
 
 function NotFound() {
-  const [hovered, setHovered] = React.useState(false);
-  const navigate = useNavigate();
-
   return (
     <div className="h-screen  w-full flex flex-col items-center justify-center px-6 text-center">
       <motion.div

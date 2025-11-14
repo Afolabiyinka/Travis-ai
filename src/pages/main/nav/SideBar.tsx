@@ -8,7 +8,7 @@ import Sidebarprofile from "@/components/custom/Sidebarprofile";
 
 const SideBar = () => {
   const [asideOpen, setAsideOpen] = React.useState(true);
-  const [searchOpen, setSearchOpen] = React.useState<string>("");
+  // const [searchOpen, setSearchOpen] = React.useState<string>("");
   const sidebarRef = React.useRef(null);
 
   // Prevent body scroll when mobile sidebar is open

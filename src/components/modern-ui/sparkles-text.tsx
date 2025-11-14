@@ -1,8 +1,9 @@
 "use client";
 import { motion } from "motion/react";
-import { CSSProperties, ReactElement, useEffect, useState } from "react";
+import type { CSSProperties, ReactElement } from "react";
+import { useEffect, useState } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 interface Sparkle {
   id: string;
@@ -74,7 +75,7 @@ export const SparklesText: React.FC<SparklesTextProps> = ({
     const generateStar = (): Sparkle => {
       const starX = `${Math.random() * 100}%`;
       const starY = `${Math.random() * 100}%`;
-      
+
       // Use sparkleColors array if provided, otherwise use first/second colors
       let color;
       if (sparkleColors && sparkleColors.length > 0) {
@@ -83,7 +84,7 @@ export const SparklesText: React.FC<SparklesTextProps> = ({
       } else {
         color = Math.random() > 0.5 ? colors.first : colors.second;
       }
-      
+
       const delay = Math.random() * (speed || 2);
       const scale = Math.random() * 1 + 0.3;
       const lifespan = Math.random() * 10 + 5;
@@ -92,7 +93,10 @@ export const SparklesText: React.FC<SparklesTextProps> = ({
     };
 
     const initializeStars = () => {
-      const newSparkles = Array.from({ length: actualSparkleCount }, generateStar);
+      const newSparkles = Array.from(
+        { length: actualSparkleCount },
+        generateStar
+      );
       setSparkles(newSparkles);
     };
 
