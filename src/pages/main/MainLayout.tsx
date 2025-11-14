@@ -3,7 +3,6 @@ import SideBar from "./nav/SideBar";
 import { motion } from "motion/react";
 import TextArea from "@/components/custom/TextArea";
 import AccountNav from "./nav/AccountNav";
-import { Toaster } from "sonner";
 
 const MainLayout = () => {
   return (
