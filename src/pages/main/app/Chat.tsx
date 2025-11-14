@@ -1,5 +1,6 @@
 import ChatBubble from "@/components/custom/chatbuble";
 import { Toaster } from "sonner";
+import { useEffect, useRef } from "react";
 
 const Chat = () => {
   const messages = [
@@ -40,14 +41,28 @@ const Chat = () => {
     },
   ];
 
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  // Auto-scroll to bottom on messages render
+  useEffect(() => {
+    const el = containerRef.current;
+    if (el) {
+      el.scrollTop = el.scrollHeight;
+    }
+  }, [messages]);
+
   return (
-    <div
-      className="w-full h-full py-8 
-    rounded-xl  gap-6  overflow-y-scroll"
-    >
-      {messages.map((msg, i) => (
-        <ChatBubble key={i} text={msg.text} isBot={msg.isBot} />
-      ))}
+    <div className="relative w-full h-full flex flex-col">
+      <div
+        ref={containerRef}
+        className="flex-1 overflow-y-auto p-4 gap-4 flex flex-col"
+      >
+        {messages.map((msg, i) => (
+          <ChatBubble key={i} text={msg.text} isBot={msg.isBot} />
+        ))}
+      </div>
+
+      {/* Optional: bottom input will go here in MainLayout */}
       <Toaster position="top-right" />
     </div>
   );

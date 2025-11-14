@@ -6,47 +6,49 @@ import { AnimatePresence, motion } from "motion/react";
 
 const AccountNav = () => {
   const { theme, setTheme } = useTheme();
-  const [menu, setOpenMenu] = React.useState<boolean>(false);
+  const [menu, setOpenMenu] = React.useState(false);
 
-  // const categories = [
-  //   { id: "all", label: "All", icon: Layers, color: "#A06CD5" },
-  //   { id: "lifestyle", label: "Lifestyle", icon: Shirt, color: "#FF6B6B" },
-  //   { id: "desk", label: "Desk", icon: Briefcase, color: "#4ECDC4" },
-  //   { id: "tech", label: "Tech", icon: Smartphone, color: "#45B7D1" },
-  //   { id: "home", label: "Home", icon: Home, color: "#F9C74F" },
-  // ];
-
-  function handleClick(theme: any) {
-    setTheme(theme);
+  const handleClick = (newTheme: "light" | "dark") => {
+    setTheme(newTheme);
     setOpenMenu(false);
-  }
+  };
+
   return (
-    <div className="shadow rounded-full gap-3  p-3 w-full h-full flex justify-end relative ">
-      <IconButton icon="UserCircle" onClick={() => setOpenMenu(!open)} />
+    <div className="shadow rounded-full gap-3 p-3 w-full h-full flex justify-end relative">
+      {/* User Profile */}
+      <IconButton icon="UserCircle" onClick={() => setOpenMenu(!menu)} />
+
+      {/* Theme Toggle */}
       <IconButton
-        icon={`${theme === "dark" ? "Moon" : "Sun"}`}
+        icon={theme === "dark" ? "Moon" : "Sun"}
         onClick={() => setOpenMenu(true)}
       />
 
+      {/* Dropdown */}
       <AnimatePresence>
         {menu && (
           <motion.span
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-            className="border flex flex-col gap-3 justify-center items-center fixed top-22 z-50
-         p-3 rounded-lg"
+            initial={{ opacity: 0, y: -40 }} // start higher
+            animate={{ opacity: 1, y: 0 }} // slide down
+            exit={{ opacity: 0, y: -40 }} // slide up on close
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 22,
+            }}
+            className="border flex flex-col gap-3 justify-center items-center
+      fixed top-[70px] right-5 z-50 p-3 rounded-lg bg-white dark:bg-neutral-900
+      shadow-xl"
           >
             <span
-              className="flex justify-between cursor-pointer p-2 gap-2"
+              className="flex justify-between cursor-pointer p-2 gap-2 w-full hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md transition"
               onClick={() => handleClick("light")}
             >
               Light <Icon icon="Sun" />
             </span>
 
             <span
-              className="flex justify-between cursor-pointer  p-2 rounded-lg gap-2"
+              className="flex justify-between cursor-pointer p-2 gap-2 w-full hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md transition"
               onClick={() => handleClick("dark")}
             >
               Dark <Icon icon="Moon" />

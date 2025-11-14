@@ -7,7 +7,7 @@ import { titles } from "@/lib/Random";
 import Sidebarprofile from "@/components/custom/Sidebarprofile";
 
 const SideBar = () => {
-  const [asideOpen, setAsideOpen] = React.useState(true);
+  const [asideOpen, setAsideOpen] = React.useState(false);
   // const [searchOpen, setSearchOpen] = React.useState<string>("");
   const sidebarRef = React.useRef(null);
 
@@ -54,7 +54,7 @@ const SideBar = () => {
         ref={sidebarRef}
         className={`
           fixed lg:static top-0 left-0 z-50 lg:z-auto
-          h-screen lg:h-full w-80 lg:w-96
+          h-full lg:h-full w-80 lg:w-96
        lg:rounded-2xl lg:m-2
           flex flex-col
           shadow-2xl lg:shadow-none
