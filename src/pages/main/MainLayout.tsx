@@ -27,7 +27,7 @@ const MainLayout = () => {
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ ease: "easeIn", duration: 0.5, delay: 0.4 }}
-          className="w-full max-w-[650px] mx-auto fixed z-50 bottom-4 px-2"
+          className="w-full max-w-[650px] mx-auto fixed  bottom-4 px-2"
         >
           <TextArea text="Generate Excuse" />
         </motion.div>

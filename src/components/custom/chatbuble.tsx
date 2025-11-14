@@ -13,7 +13,7 @@ const ChatBubble = ({ text, isBot }: ChatBubbleProps) => {
       p-2  mb-3`}
     >
       <div
-        className={`max-w-[80%] md:max-w-[70%] wrap-break-word p-3 rounded-full text-sm md:text-base  
+        className={`max-w-[90%] md:max-w-[80%] wrap-break-word p-3 rounded-full text-sm md:text-base  
           ${isBot ? "" : "bg-m-accent text-white shadow"}`}
       >
         {text}

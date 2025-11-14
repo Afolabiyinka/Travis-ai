@@ -41,7 +41,7 @@ const AccountNav = () => {
       shadow-xl"
           >
             <span
-              className="flex justify-between cursor-pointer p-2 gap-2 w-full hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md transition"
+              className="flex justify-between cursor-pointer backdrop-blur-lg p-2 gap-2 w-full hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md transition"
               onClick={() => handleClick("light")}
             >
               Light <Icon icon="Sun" />

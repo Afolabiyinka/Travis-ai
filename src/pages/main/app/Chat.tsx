@@ -55,7 +55,7 @@ const Chat = () => {
     <div className="relative w-full h-full flex flex-col">
       <div
         ref={containerRef}
-        className="flex-1 overflow-y-auto p-4 gap-4 flex flex-col"
+        className="flex-1 overflow-y-auto p-2 gap-4 flex flex-col"
       >
         {messages.map((msg, i) => (
           <ChatBubble key={i} text={msg.text} isBot={msg.isBot} />

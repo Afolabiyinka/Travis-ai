@@ -44,7 +44,7 @@ const TextArea = ({
   }, []);
 
   return (
-    <div className="relative w-full border p-3 gap-3 flex rounded-full items-center">
+    <div className="relative w-full border p-3 gap-3 flex rounded-full items-center backdrop-blur-3xl">
       <IconButton icon="Plus" tooltip="Upload a file" onClick={onIconClick} />
 
       <textarea
