@@ -28,14 +28,14 @@ const FAQs = () => {
           >
             <AccordionItem
               value={`item-${index}`}
-              className="overflow-hidden rounded-xl border border-m-accent bg-white shadow-sm transition-shadow hover:shadow-lg"
+              className="overflow-hidden rounded-xl border border-m-accent shadow-sm transition-shadow hover:shadow-lg"
             >
               <AccordionTrigger className="px-6 py-4 text-left text-lg transition-all duration-200 cursor-pointer data-[state=open]:text-m-accent">
                 {item.question}
               </AccordionTrigger>
 
               <AccordionContent className="overflow-hidden">
-                <div className="px-6 pb-5 pt-3 leading-relaxed text-gray-700">
+                <div className="px-6 pb-5 pt-3 leading-relaxed">
                   {item.answer}
                 </div>
               </AccordionContent>

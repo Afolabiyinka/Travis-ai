@@ -22,7 +22,7 @@ const Sidebarprofile = () => {
               className="w-full  flex flex-col items-center gap-3 rounded-full p-3 cursor-pointer"
             >
               <div className="flex items-center justify-start w-full gap-2">
-                <HelpCircle className="h-9 w-9 text-gray-800 stroke-[1px] " />
+                <HelpCircle className="h-9 w-9  stroke-[1px] " />
                 <p>Help</p>
               </div>
               <div
@@ -31,9 +31,7 @@ const Sidebarprofile = () => {
               >
                 <IconButton icon="Settings" />
 
-                <p className="font-inter text-lg font-medium text-gray-800">
-                  Settings
-                </p>
+                <p className="font-inter text-lg font-medium">Settings</p>
               </div>
               <CustomBtn text="Log Out" isSolid endIcon="LogOut" />
             </motion.div>
@@ -43,9 +41,7 @@ const Sidebarprofile = () => {
           <div className="text-left flex justify-center items-center gap-3">
             <Icon icon="User" />
 
-            <p className="font-inter text-lg font-medium text-gray-700">
-              Olayinka Afolabi
-            </p>
+            <p className="font-inter text-lg font-medium">Olayinka Afolabi</p>
           </div>
           <IconButton
             icon={`${open ? "ChevronDown" : "ChevronUp"}`}

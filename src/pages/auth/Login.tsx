@@ -24,7 +24,6 @@ const Login = () => {
 
     if (!loginData.password) {
       toastError("Password is required");
-
       return;
     }
 

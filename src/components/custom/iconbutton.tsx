@@ -32,11 +32,11 @@ const IconButton = ({ icon, tooltip, onClick, isSolid }: IconButtonProps) => {
             className={`${
               isSolid
                 ? "bg-m-accent text-white shadow  "
-                : "text-gray-800 shadow backdrop-blur-3xl hover:bg-m-accent hover:text-white"
-            } h-10 w-10 stroke-2  rounded-full flex items-center justify-center transition-all duration-200 cursor-pointer p-3`}
+                : "shadow backdrop-blur-3xl hover:bg-m-accent hover:text-white"
+            } h-10 w-10 stroke-2  rounded-full flex items-center justify-center transition-all duration-200 cursor-pointer p-2`}
             aria-label={tooltip}
           >
-            <IconComponent className="h-8 w-8" />
+            <IconComponent className="h-10 w-10" />
           </motion.button>
         </TooltipTrigger>
         {tooltip && (

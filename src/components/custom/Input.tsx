@@ -28,7 +28,7 @@ const Input = ({
     <span className="border mt-6 w-full md:w-100 flex text-m-accent p-2 px-6 h-16 items-center rounded-4xl border-m-accent">
       <IconComponent />
       <input
-        className="h-full w-full border-0 outline-0 p-2 text-black"
+        className="h-full w-full border-0 outline-0 p-2"
         placeholder={placeholder}
         onChange={(e) => onChange?.(e.target.value)}
         type={type === "password" && showPassword ? "text" : type}

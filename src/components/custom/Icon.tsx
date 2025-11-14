@@ -22,7 +22,7 @@ const Icon = ({ icon, tooltip, onClick }: IconProps) => {
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <IconComponent className="cursor-pointer text-black" />
+            <IconComponent className="cursor-pointer" />
           </TooltipTrigger>
           {tooltip && (
             <TooltipContent>

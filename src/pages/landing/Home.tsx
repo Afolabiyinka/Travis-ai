@@ -49,7 +49,7 @@ const Home: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-2xl sm:text-3xl md:text-3xl  text-gray-700 font-[Roboto slab]"
+          className="text-2xl sm:text-3xl md:text-3xl  font-[Roboto slab]"
         >
           Never be speechless again.
         </motion.p>

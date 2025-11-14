@@ -55,7 +55,7 @@ const SideBar = () => {
         className={`
           fixed lg:static top-0 left-0 z-50 lg:z-auto
           h-screen lg:h-full w-80 lg:w-96
-          bg-white lg:rounded-2xl lg:m-2
+       lg:rounded-2xl lg:m-2
           flex flex-col
           shadow-2xl lg:shadow-none
           transition-transform duration-300 ease-out
@@ -63,7 +63,7 @@ const SideBar = () => {
         `}
       >
         {/* Header */}
-        <div className="sticky top-0 bg-white z-10 p-4 border-b border-gray-200">
+        <div className="sticky top-0 z-10 p-4 border-b border-gray-200">
           <div className="flex justify-between items-center mb-4">
             <AnimatedGradientText className="text-5xl font-[inter]">
               Travis Ai
@@ -77,13 +77,13 @@ const SideBar = () => {
 
         {/* Titles List */}
         <div className="flex-1 overflow-y-auto p-3 space-y-1">
-          <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 px-2">
+          <div className="text-xs font-semibold uppercase tracking-wider mb-2 px-2">
             Recent Chats
           </div>
           {titles.map((title, i) => (
             <button
               key={i}
-              className="w-full text-left hover:bg-gray-100 text-gray-700 p-3 rounded-lg cursor-pointer text-sm transition-colors focus:outline-none  focus:bg-gray-50 flex gap-2"
+              className="w-full text-left hover:bg-gray-500  p-3 rounded-lg cursor-pointer text-sm transition-colors focus:outline-none  flex gap-2"
               onClick={() => {
                 if (window.innerWidth < 1024) {
                   setAsideOpen(false);

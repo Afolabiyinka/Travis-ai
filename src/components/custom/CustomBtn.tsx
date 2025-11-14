@@ -23,11 +23,9 @@ const CustomBtn = ({
   disabled,
   onClick,
 }: ButtonProps) => {
-  const Icon = startIcon
-    ? LucideIcon[startIcon]
-    : endIcon
-    ? LucideIcon[endIcon]
-    : null;
+  const Icon = (
+    startIcon ? LucideIcon[startIcon] : endIcon ? LucideIcon[endIcon] : null
+  ) as React.ComponentType<any> | null;
 
   const baseClasses = `
     relative overflow-hidden

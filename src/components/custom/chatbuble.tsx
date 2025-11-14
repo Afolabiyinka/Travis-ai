@@ -1,5 +1,3 @@
-import { Toaster } from "sonner";
-import useToastMessage from "@/hooks/useToastMsg";
 import IconButton from "./iconbutton";
 import { CopyButton } from "@/components/modern-ui/copy-button";
 
@@ -9,8 +7,6 @@ interface ChatBubbleProps {
 }
 
 const ChatBubble = ({ text, isBot }: ChatBubbleProps) => {
-  const { toastSuccess } = useToastMessage();
-
   return (
     <div
       className={`w-full flex flex-col justify-center gap-2
@@ -25,14 +21,10 @@ const ChatBubble = ({ text, isBot }: ChatBubbleProps) => {
       {isBot && (
         <span className="flex justify-between gap-6 w-fit p-1 rounded-full">
           <IconButton icon="ThumbsUp" tooltip="Like this response" />
-          <CopyButton
-            value={`${isBot ? text : ""}`}
-            onClick={() => toastSuccess("Copied to clipboard")}
-          />
+          <CopyButton value={`${isBot ? text : ""}`} />
           <IconButton icon="RefreshCcw" tooltip="Regenerate" />
         </span>
       )}
-      <Toaster position="top-right" />
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import ChatBubble from "@/components/custom/chatbuble";
+import { Toaster } from "sonner";
 
 const Chat = () => {
   const messages = [
@@ -47,6 +48,7 @@ const Chat = () => {
       {messages.map((msg, i) => (
         <ChatBubble key={i} text={msg.text} isBot={msg.isBot} />
       ))}
+      <Toaster position="top-right" />
     </div>
   );
 };
