@@ -26,5 +26,9 @@ app.listen(port, () => {
   console.log(`server is running at ${port}`);
 });
 
+app.get("/", (req, res) => {
+  res.send(`<h1> View the api docs <a href="">Here</a></h1>`);
+});
+
 //Connection to the db
 connectDb();
