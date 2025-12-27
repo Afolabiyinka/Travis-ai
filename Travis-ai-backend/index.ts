@@ -28,7 +28,7 @@ app.listen(port, () => {
 
 app.get("/", (req, res) => {
   res.send(
-    `<h1> View the api docs <a href="79bkunfbq2.apidog.io">Here</a></h1>`
+    `<h1> View the api docs <a href="https://79bkunfbq2.apidog.io/">Here</a></h1>`
   );
 });
 
