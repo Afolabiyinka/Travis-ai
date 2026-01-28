@@ -12,7 +12,7 @@ const ChatBubble = ({ text, isBot }: Props) => {
   return (
     <div
       className={`rounded-full p-3 px-6 max-w-[80%] whitespace-pre-wrap 
-         ${isBot ? "" : "bg-purple-600 text-white"}
+         ${isBot ? "" : "bg-m-accent text-white"}
       `}
     >
       <ReactMarkdown

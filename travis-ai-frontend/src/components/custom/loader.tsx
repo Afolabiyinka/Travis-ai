@@ -1,49 +1,49 @@
 import styled from "styled-components";
 
-export default function Loader() {
+const Loader = () => {
   return (
     <StyledWrapper>
-      <div className="wrapper">
-        <div className="circle" />
-        <div className="circle" />
-        <div className="circle" />
-        <div className="shadow" />
-        <div className="shadow" />
-        <div className="shadow" />
+      <div className="typing-indicator">
+        <div className="typing-circle" />
+        <div className="typing-circle" />
+        <div className="typing-circle" />
+        <div className="typing-shadow" />
+        <div className="typing-shadow" />
+        <div className="typing-shadow" />
       </div>
     </StyledWrapper>
   );
-}
+};
 
 const StyledWrapper = styled.div`
-  .wrapper {
-    width: 100px;
-    height: 40px;
+  .typing-indicator {
+    width: 60px;
+    height: 30px;
     position: relative;
-    z-index: 1;
+    z-index: 4;
   }
 
-  .circle {
-    width: 10px;
-    height: 10px;
+  .typing-circle {
+    width: 8px;
+    height: 8px;
     position: absolute;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: white;
     left: 15%;
     transform-origin: 50%;
-    animation: circle7124 0.5s alternate infinite ease;
+    animation: typing-circle7124 0.5s alternate infinite ease;
   }
 
-  @keyframes circle7124 {
+  @keyframes typing-circle7124 {
     0% {
-      top: 60px;
+      top: 20px;
       height: 5px;
       border-radius: 50px 50px 25px 25px;
       transform: scaleX(1.7);
     }
 
     40% {
-      height: 20px;
+      height: 8px;
       border-radius: 50%;
       transform: scaleX(1);
     }
@@ -53,32 +53,32 @@ const StyledWrapper = styled.div`
     }
   }
 
-  .circle:nth-child(2) {
+  .typing-circle:nth-child(2) {
     left: 45%;
     animation-delay: 0.2s;
   }
 
-  .circle:nth-child(3) {
+  .typing-circle:nth-child(3) {
     left: auto;
     right: 15%;
     animation-delay: 0.3s;
   }
 
-  .shadow {
-    width: 20px;
+  .typing-shadow {
+    width: 5px;
     height: 4px;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.9);
+    // background-color: rgba(0, 0, 0, 0.2);
     position: absolute;
-    top: 62px;
+    top: 30px;
     transform-origin: 50%;
-    z-index: -1;
+    z-index: 3;
     left: 15%;
     filter: blur(1px);
-    animation: shadow046 0.5s alternate infinite ease;
+    animation: typing-shadow046 0.5s alternate infinite ease;
   }
 
-  @keyframes shadow046 {
+  @keyframes typing-shadow046 {
     0% {
       transform: scaleX(1.5);
     }
@@ -94,14 +94,16 @@ const StyledWrapper = styled.div`
     }
   }
 
-  .shadow:nth-child(4) {
+  .typing-shadow:nth-child(4) {
     left: 45%;
     animation-delay: 0.2s;
   }
 
-  .shadow:nth-child(5) {
+  .typing-shadow:nth-child(5) {
     left: auto;
     right: 15%;
     animation-delay: 0.3s;
   }
 `;
+
+export default Loader;

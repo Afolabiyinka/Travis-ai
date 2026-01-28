@@ -8,6 +8,7 @@ import {
 } from "@/components/modern-ui/avatar";
 import { Button } from "@/components/modern-ui/button";
 import { useAuthStore } from "@/store/auth/authStore";
+import { Upload } from "lucide-react";
 
 const Profile = () => {
   const { updatedData, setupdatedData, handleUpdate } = useUser();
@@ -29,6 +30,7 @@ const Profile = () => {
             </AvatarFallback>
           </Avatar>
           <Button type="button" variant={`ghost`} className="bg-m-accent">
+            <Upload />
             Change picture
           </Button>
         </span>

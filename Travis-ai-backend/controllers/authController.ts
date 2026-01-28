@@ -27,7 +27,7 @@ export const loginUser = async (req: Request, res: Response) => {
     const token = jwt.sign(
       { id: user._id, email: user.email },
       process.env.JWT_SECRET || "secretkey",
-      { expiresIn: "1hr" }
+      { expiresIn: "1hr" },
     );
     return res.status(200).json({
       message: "Login succesfull",
@@ -72,7 +72,7 @@ export const registerUser = async (req: Request, res: Response) => {
     const token = jwt.sign(
       { id: user._id, email: user.email },
       process.env.JWT_SECRET || "secretkey",
-      { expiresIn: "1hr" }
+      { expiresIn: "1hr" },
     );
     res.status(200).json({
       message: "User created succesfully",

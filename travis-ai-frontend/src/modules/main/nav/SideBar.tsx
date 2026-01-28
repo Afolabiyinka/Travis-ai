@@ -34,7 +34,7 @@ const SideBar = () => {
     }
 
     const results = titles.filter((s) =>
-      s.toLowerCase().includes(searchQuery.toLowerCase())
+      s.toLowerCase().includes(searchQuery.toLowerCase()),
     );
 
     setSearchResults(results);
@@ -55,7 +55,7 @@ const SideBar = () => {
       {asideOpen && (
         <div
           onClick={() => setAsideOpen(false)}
-          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-md lg:hidden animate-in fade-in duration-200"
+          className="fixed inset-0 z-40 bg-black/40 lg:hidden animate-in fade-in duration-200"
           aria-hidden="true"
         />
       )}
@@ -63,13 +63,13 @@ const SideBar = () => {
       <aside
         ref={sidebarRef}
         className={`
-          fixed lg:static top-0 left-0 z-50 lg:z-auto rounded-3xl
+          fixed lg:static top-0 left-0 z-50 lg:z-auto 
           h-full lg:h-full w-80 lg:w-96
-          lg:rounded-2xl lg:m-1
+          lg:rounded-2xl
           flex flex-col
           shadow-2xl lg:shadow-none
-          transition-transform duration-300 ease-out
-          bg-inherit
+          transition-transform duration-300 ease-out bg-white
+          dark:bg-[#0f0e0e]
           ${asideOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
         `}
       >

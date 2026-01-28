@@ -14,7 +14,7 @@ const NavBar = () => {
 
   return (
     <nav className="w-full px-6 sm:px-6 lg:px-24 py-3  sticky mt-2">
-      <div className="mx-auto flex items-center justify-between py-2 border border-m-accent rounded-full backdrop-blur-3xl px-6">
+      <div className="mx-auto flex items-center justify-between py-2 border border-m-accent rounded-full px-6">
         {/* Logo */}
         <a href="/" className="shrink-0">
           <AnimatedGradientText className="text-[1.8rem]  font-bold tracking-widest">
