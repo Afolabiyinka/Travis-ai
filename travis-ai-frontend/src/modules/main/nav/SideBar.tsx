@@ -65,8 +65,8 @@ const SideBar = () => {
         className={`
           fixed lg:static top-0 left-0 z-50 lg:z-auto 
           h-full lg:h-full w-80 lg:w-96
-          lg:rounded-2xl
-          flex flex-col
+          lg:rounded-2xl p-2
+          flex flex-col border
           shadow-2xl lg:shadow-none
           transition-transform duration-300 ease-out bg-white
           dark:bg-[#161616]

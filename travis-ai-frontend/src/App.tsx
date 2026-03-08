@@ -26,6 +26,7 @@ function App() {
       <Toaster
         position="top-right"
         theme={theme}
+        richColors
         toastOptions={{ style: { borderRadius: "20px" } }}
       />
     </>

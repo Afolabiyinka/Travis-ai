@@ -29,10 +29,13 @@ const Profile = () => {
               {user?.username.substring(0, 1)}
             </AvatarFallback>
           </Avatar>
-          <Button type="button" variant={`secondary`}>
-            <Upload />
-            Change picture
-          </Button>
+
+          <CustomBtn
+            text="Change Picture"
+            isSolid
+            startIcon="Upload"
+            type="button"
+          />
         </span>
         <Input
           placeholder="Email"
