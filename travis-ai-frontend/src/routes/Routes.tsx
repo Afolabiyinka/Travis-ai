@@ -15,6 +15,7 @@ const Chat = lazy(() => import("@/modules/main/pages/chat/Chat"));
 
 import NotFound from "@/modules/NotFound";
 import type { RouteObject } from "react-router-dom";
+import Pricing from "@/modules/landing/pages/Pricing";
 
 //Layouts
 const AuthLayout = lazy(() => import("@/modules/auth/AuthLayout"));
@@ -61,6 +62,10 @@ export const routes: RouteObject[] = [
       {
         path: "reviews",
         Component: Reviews,
+      },
+      {
+        path: "pricing",
+        Component: Pricing,
       },
     ],
   },

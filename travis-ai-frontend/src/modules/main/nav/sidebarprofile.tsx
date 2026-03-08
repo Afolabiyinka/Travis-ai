@@ -18,7 +18,7 @@ const Sidebarprofile = () => {
     <div
       className={`w-full shadow flex gap-1 transition-all duration-500 flex-col justify-between items-center rounded-4xl`}
     >
-      <div className="w-full flex gap-3 transition-all duration-500 flex-col justify-between items-center p-2 rounded-3xl">
+      <div className="w-full flex gap-3 transition-all duration-500 flex-col justify-between items-center p-1 rounded-3xl">
         <AnimatePresence mode="wait">
           {open && (
             <motion.div

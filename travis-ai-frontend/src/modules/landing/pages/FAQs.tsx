@@ -14,8 +14,11 @@ const FAQs = () => {
       whileInView="visible"
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="w-full max-w-4xl mx-auto p-4 min-h-screen"
+      className="w-full max-w-4xl mx-auto p-4 min-h-screen flex justify-center items-center flex-col gap-8"
     >
+      <h1 className="capitalize text-6xl mb-8 text-m-accent">
+        Frequently asked questions
+      </h1>
       <Accordion type="single" collapsible className="w-full space-y-4">
         {faqs.map((item, index) => (
           <motion.div

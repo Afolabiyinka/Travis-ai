@@ -11,13 +11,11 @@ import { useThemeStore } from "@/store/theme/themeStore";
 import Icon from "@/components/custom/Icon";
 import SecuritySettings from "./security/security";
 
-const Settings = ({
-  open,
-  setOpen,
-}: {
+interface Props {
   open: boolean;
   setOpen: (value: boolean) => void;
-}) => {
+}
+const Settings = ({ open, setOpen }: Props) => {
   const { theme } = useThemeStore();
 
   const tabs = [

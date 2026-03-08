@@ -13,7 +13,7 @@ const NavBar = () => {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className="w-full px-6 sm:px-6 lg:px-24 py-3  sticky mt-2">
+    <nav className="w-full px-6 sm:px-6 lg:px-24 p-2  sticky mt-2">
       <div className="mx-auto flex items-center justify-between py-2 border border-m-accent rounded-full px-6">
         {/* Logo */}
         <a href="/" className="shrink-0">
@@ -29,7 +29,7 @@ const NavBar = () => {
               key={navlink.path}
               to={navlink.path}
               className={({ isActive }) =>
-                ` transition-color ${isActive ? "text-m-accent" : ""}`
+                ` transition-color ${isActive ? "text-m-accent underline underline-offset-8" : ""}`
               }
             >
               <motion.p whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

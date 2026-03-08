@@ -1,10 +1,15 @@
-import { create } from "zustand";
-import type { ChatType } from "../types/chat";
+// import { useState } from "react";
+// import { useMutation } from "@tanstack/react-query";
+// import { generateExcuse } from "@/utils/ai";
 
-interface ChatStore {
-  prompt: string;
-  message: string;
-  chats: ChatType[];
+// export const useChats = () => {
+//   const [prompt, setPrompt] = useState<string>("");
+//   const [message, setMessage] = useState<string>("");
 
-  setPromt: (prompt: string) => void;
-}
+//   const {} = useMutation({
+//     mutationFn: () => generateExcuse(prompt),
+//   });
+
+//   function handleSend() {}
+//   return {};
+// };

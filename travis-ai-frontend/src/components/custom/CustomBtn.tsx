@@ -29,7 +29,7 @@ const CustomBtn = ({
 
   const baseClasses = `
     relative overflow-hidden
-    w-full rounded-full
+     rounded-full w-full
     h-12 px-4 py-2 cursor-pointer
     text-base sm:text-lg font-medium
     flex items-center justify-center gap-2.5
@@ -40,7 +40,7 @@ const CustomBtn = ({
 
   const variantClasses = isSolid
     ? "bg-m-accent text-white shadow-lg hover:shadow-2xl"
-    : "border border-m-accent text-m-accent bg-white hover:bg-m-accent/20";
+    : "border border-m-accent text-white bg-white hover:bg-m-accent/20";
 
   const content = (
     <>

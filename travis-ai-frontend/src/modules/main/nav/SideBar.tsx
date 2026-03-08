@@ -69,7 +69,7 @@ const SideBar = () => {
           flex flex-col
           shadow-2xl lg:shadow-none
           transition-transform duration-300 ease-out bg-white
-          dark:bg-[#0f0e0e]
+          dark:bg-[#161616]
           ${asideOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
         `}
       >
@@ -115,12 +115,12 @@ const SideBar = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3, delay: i * 0.05 }}
-              className="w-full text-left hover:bg-gray-300  hover:text-black p-3 rounded-lg cursor-pointer text-sm flex gap-2 items-center"
+              className="w-full text-left hover:bg-muted p-3 rounded-lg cursor-pointer text-sm flex gap-2 items-center"
               onClick={() =>
                 asideOpen && window.innerWidth < 1024 && setAsideOpen(false)
               }
             >
-              <MessageCircleMore />
+              <MessageCircleMore className="stroke-[1px]" />
               <div className="truncate">{title}</div>
             </motion.button>
           ))}

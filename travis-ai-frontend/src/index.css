@@ -79,7 +79,7 @@
 
   /*! Our Custom Variables */
   --bg: #0b0810;
-  --m-accent: #1f162e;
+  --m-accent: #3b275c;
   --accent-green: #fff;
   --m-muted: #453a55;
   --m-text: #9ca3af;
@@ -125,7 +125,7 @@
   color: black;
 }
 .dark {
-  background: #0f0e0e;
+  background: #161616;
   color: white;
 }
 *::-webkit-scrollbar {

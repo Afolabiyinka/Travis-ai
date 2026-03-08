@@ -29,7 +29,7 @@ const Profile = () => {
               {user?.username.substring(0, 1)}
             </AvatarFallback>
           </Avatar>
-          <Button type="button" variant={`ghost`} className="bg-m-accent">
+          <Button type="button" variant={`secondary`}>
             <Upload />
             Change picture
           </Button>
