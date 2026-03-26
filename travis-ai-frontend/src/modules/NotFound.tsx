@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Flag } from "lucide-react";
+import { Frown } from "lucide-react";
 import CustomBtn from "@/components/custom/CustomBtn";
 
 function NotFound() {
@@ -11,7 +11,7 @@ function NotFound() {
         transition={{ duration: 0.4, ease: "easeOut" }}
         className="max-w-md flex flex-col items-center justify-center"
       >
-        <Flag className="w-20 h-20 mx-auto text-m-accent" />
+        <Frown className="w-20 h-20 mx-auto stroke-[1px]" />
         <h1 className="mt-6 text-3xl md:text-4xl font-bold leading-tight">
           Oops! Page not found.
         </h1>

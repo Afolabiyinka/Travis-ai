@@ -1,4 +1,3 @@
-import { Button } from "@/components/modern-ui/button";
 import {
   Dialog,
   DialogContent,
@@ -9,8 +8,9 @@ import { Input } from "@/components/modern-ui/input";
 import useToastMessage from "@/lib/useToastMsg";
 import { useMutation } from "@tanstack/react-query";
 import { useAuthStore } from "@/store/auth/authStore";
-import { deleteAccount } from "@/modules/main/services/user/request";
-import type { DeleteAccountPayload } from "@/modules/main/types/types";
+import { deleteAccount } from "@/modules/main/settings/services/request";
+import type { DeleteAccountPayload } from "@/modules/main/settings/types/types";
+import CustomBtn from "@/components/custom/CustomBtn";
 
 const DeleteAccount = () => {
   const [openDelete, setOpenDelete] = useState(false);
@@ -49,7 +49,14 @@ const DeleteAccount = () => {
     <div>
       <Dialog open={openDelete} onOpenChange={setOpenDelete}>
         <DialogTrigger>
-          <Button variant="destructive">Delete account</Button>
+          {/* <Button variant="destructive">Delete account</Button> */}
+          <CustomBtn
+            text="Delete Account"
+            isSolid
+            endIcon="Trash"
+            className="w-full bg-red-400"
+            // onClick={() => setOpenPassword(true)}
+          />
         </DialogTrigger>
         <DialogContent>
           <h3 className="text-xl mb-2">Delete Account</h3>
@@ -73,16 +80,16 @@ const DeleteAccount = () => {
           />
 
           <div className="flex gap-3 justify-end">
-            <Button onClick={() => setOpenDelete(false)} variant="secondary">
-              Cancel
-            </Button>
-            <Button
-              onClick={handleDelete}
-              variant="destructive"
+            <CustomBtn text="Cancel" onClick={() => setOpenDelete(false)} />
+
+            <CustomBtn
+              isSolid
+              className="w-full bg-red-400"
               disabled={confirmPhrase.trim() !== deletePhrase || isPending}
-            >
-              {isPending ? "Deleting..." : "Delete my account"}
-            </Button>
+              onClick={handleDelete}
+              text={`${isPending ? "Deleting..." : "Delete my account"}
+`}
+            />
           </div>
         </DialogContent>
       </Dialog>

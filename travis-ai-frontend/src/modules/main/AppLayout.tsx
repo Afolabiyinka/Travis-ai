@@ -5,7 +5,7 @@ import TextArea from "@/components/custom/TextArea";
 
 const AppLayout = () => {
   return (
-    <div className="flex h-screen  gap-3 p-4">
+    <div className="flex h-screen  gap-3">
       {/* Left Sidebar */}
       <SideBar />
 

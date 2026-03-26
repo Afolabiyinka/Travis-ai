@@ -1,5 +1,5 @@
 import Icon from "@/components/custom/Icon";
-import { useThemeStore } from "@/store/theme/themeStore";
+import { useThemeStore } from "@/modules/main/settings/store/theme/themeStore";
 import { motion } from "motion/react";
 
 const themetoggle = () => {

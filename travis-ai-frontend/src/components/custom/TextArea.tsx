@@ -1,6 +1,5 @@
 import IconButton from "./iconbutton";
 import React from "react";
-import { useChatStore } from "@/store/main/chatStore";
 interface TextAreaProps {
   text?: string;
   onChange?: (value: string) => void;
@@ -16,10 +15,6 @@ const TextArea = ({
 }: TextAreaProps) => {
   const ref = React.useRef<HTMLTextAreaElement | null>(null);
 
-  const prompt = useChatStore((state) => state.prompt);
-  const setPrompt = useChatStore((state) => state.setPrompt);
-  const handleSend = useChatStore((state) => state.handleSend);
-
   const handleInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const el = ref.current;
     if (!el) return;
@@ -34,12 +29,10 @@ const TextArea = ({
     el.scrollTop = el.scrollHeight;
 
     onChange?.(e.target.value);
-    setPrompt(e.target.value);
   };
 
   async function handleEnter(e: any) {
     if (e.key === "Enter") {
-      await handleSend();
     }
   }
 
@@ -55,7 +48,6 @@ const TextArea = ({
 
       <textarea
         ref={ref}
-        value={prompt}
         placeholder={text}
         onChange={handleInput}
         disabled={disabled}
@@ -69,12 +61,7 @@ const TextArea = ({
         `}
       />
 
-      <IconButton
-        icon="Send"
-        tooltip="Send Message"
-        onClick={handleSend}
-        isSolid
-      />
+      <IconButton icon="SendHorizonal" tooltip="Send Message" isSolid />
     </div>
   );
 };

@@ -6,16 +6,14 @@ import {
 } from "@/components/modern-ui/dialog";
 import { UnderlineTabs } from "@/components/modern-ui/underline-tabs";
 import Profile from "./profile";
-import Themetoggle from "./themetoggle";
-import { useThemeStore } from "@/store/theme/themeStore";
+import Themetoggle from "../components/themetoggle";
+import { useThemeStore } from "@/modules/main/settings/store/theme/themeStore";
 import Icon from "@/components/custom/Icon";
-import SecuritySettings from "./security/security";
+import SecuritySettings from "./security";
+import { DialogTrigger } from "@radix-ui/react-dialog";
+import IconButton from "@/components/custom/iconbutton";
 
-interface Props {
-  open: boolean;
-  setOpen: (value: boolean) => void;
-}
-const Settings = ({ open, setOpen }: Props) => {
+const Settings = () => {
   const { theme } = useThemeStore();
 
   const tabs = [
@@ -39,16 +37,7 @@ const Settings = ({ open, setOpen }: Props) => {
         </div>
       ),
     },
-    {
-      id: "dashboard",
-      label: "Customize",
-      icon: <Icon icon="Brush" />,
-      content: (
-        <div className="p-5 text-sm text-muted-foreground">
-          Try customizing the AI to your taste
-        </div>
-      ),
-    },
+
     {
       id: "auth",
       label: "Security",
@@ -62,8 +51,12 @@ const Settings = ({ open, setOpen }: Props) => {
   ];
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="max-w-lg w-full rounded-2xl p-5 space-y-5 flex justify-center items-center flex-col">
+    <Dialog>
+      <DialogTrigger className="flex w-full items-center gap-2">
+        <IconButton icon="Settings" />
+        <p className="font-inter text-lg font-medium">Settings</p>
+      </DialogTrigger>
+      <DialogContent className=" w-full rounded-2xl p-2 space-y-5 flex justify-center items-center flex-col">
         <DialogHeader>
           <DialogTitle className="text-xl font-semibold tracking-tight">
             Settings

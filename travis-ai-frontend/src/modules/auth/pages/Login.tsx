@@ -13,16 +13,16 @@ const Login = () => {
       <motion.form
         onSubmit={handlelogin}
         viewport={{ once: true }}
-        initial={{ opacity: 0, x: -100 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
         exit={{ x: -30 }}
         transition={{ duration: 0.5, ease: easeIn }}
-        className="rounded-xl px-2 py-24 space-y-2 flex flex-col justify-center items-center gap-3 "
+        className="rounded-xl px-2  space-y-6 text-center md:w-md w-full"
       >
-        <h1 className="text-[1.6rem] md:text-4xl tracking-normal font-bold">
+        <h1 className=" tracking-normal text-3xl font-bold">
           Sign in to your account
         </h1>
-        <div className="w-full  gap-3 flex flex-col md:justify-center md:items-center justify-start items-start ">
+        <div className="w-full space-y-4">
           <Input
             value={loginData.email}
             startIcon={`Mail`}
@@ -48,32 +48,40 @@ const Login = () => {
             }
           />
 
-          <div className="flex mt-2 justify-between w-full">
-            <span className="flex gap-2  mt-3 w-fit items-center  justify-start">
+          <div className="flex justify-between items-center w-full">
+            <span className="flex gap-1  w-fit items-center  justify-start">
               <input type="checkbox" id="checkbox" className="w-4 h-4" />
-              <label htmlFor="checkbox" className="font-semibold text-lg">
-                Remember me{" "}
+              <label htmlFor="checkbox" className="text-lg">
+                Remember me
               </label>
             </span>
             <span>
-              <a className="flex gap-2  mt-3  p-2 w-full items-center md:justify-center justify-start">
+              <a className="flex gap-2 p-2 w-full items-center md:justify-center font-semibold justify-start">
                 Forgot passsword?
               </a>
             </span>
           </div>
         </div>
-        <span className="w-full mt-3">
+        <span className="w-full h-full">
           {isLoading ? (
-            <span className="flex w-full rounded-full justify-center items-center h-full p-3 bg-m-accent">
+            <span className="flex w-full rounded-full justify-center items-center h-14 p-3 bg-m-accent text-white">
               <Loader />
             </span>
           ) : (
-            <CustomBtn text={`Log in`} isSolid={true} type="submit" />
+            <CustomBtn
+              text={`Log in`}
+              isSolid={true}
+              type="submit"
+              endIcon="ArrowRight"
+            />
           )}
         </span>
         <p className="mt-3 text-lg md:text-xl">
           Don't have an account?{" "}
-          <Link to={`/auth/signup`} className="text-m-accent">
+          <Link
+            to={`/auth/signup`}
+            className="hover:underline underline-offset-4"
+          >
             Create One
           </Link>
         </p>

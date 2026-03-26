@@ -12,3 +12,5 @@ export const connectDb = async () => {
     console.error("MongoDB connection error:", error);
   }
 };
+
+export const connectLocalDatabase = async () => {}

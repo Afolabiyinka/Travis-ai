@@ -5,7 +5,7 @@ import { useAuthStore } from "@/store/auth/authStore";
 import type {
   ChangePasswordPayload,
   DeleteAccountPayload,
-} from "../../types/types";
+} from "../types/types";
 
 const baseUrl = import.meta.env.VITE_BASEURL!;
 

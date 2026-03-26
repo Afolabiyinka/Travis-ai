@@ -4,7 +4,7 @@ import CustomBtn from "@/components/custom/CustomBtn";
 import { AnimatedGradientText } from "@/components/modern-ui/animated-gradient-text";
 import IconButton from "@/components/custom/iconbutton";
 import { titles } from "@/lib/Random";
-import Sidebarprofile from "@/modules/main/nav/sidebarprofile";
+import Sidebarprofile from "./sidebarprofile";
 import { AnimatePresence, motion } from "motion/react";
 
 const SideBar = () => {
@@ -63,11 +63,11 @@ const SideBar = () => {
       <aside
         ref={sidebarRef}
         className={`
-          fixed lg:static top-0 left-0 z-50 lg:z-auto 
+          fixed lg:static top-0 left-0 z-50 
           h-full lg:h-full w-80 lg:w-96
-          lg:rounded-2xl p-2
-          flex flex-col border
-          shadow-2xl lg:shadow-none
+           p-2
+          flex flex-col 
+          shadow
           transition-transform duration-300 ease-out bg-white
           dark:bg-[#161616]
           ${asideOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}

@@ -1,11 +1,11 @@
 import { useMutation } from "@tanstack/react-query";
 import type { ChangePasswordPayload } from "../types/types";
-import { changePassword } from "../services/user/request";
+import { changePassword } from "../services/request";
 import { useState } from "react";
 import useToastMessage from "@/lib/useToastMsg";
 import { useAuthStore } from "@/store/auth/authStore";
 
-export const useSecurity = () => {
+export const usePassword = () => {
   const [passwordData, setPasswordData] = useState({
     oldPassword: "",
     newPassword: "",

@@ -13,7 +13,7 @@ const NavBar = () => {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className="w-full px-6 sm:px-6 lg:px-24 p-2  sticky mt-2">
+    <nav className="w-full px-2 lg:px-24 p-2  sticky mt-2">
       <div className="mx-auto flex items-center justify-between py-2 border border-m-accent rounded-full px-6">
         {/* Logo */}
         <a href="/" className="shrink-0">
@@ -29,7 +29,7 @@ const NavBar = () => {
               key={navlink.path}
               to={navlink.path}
               className={({ isActive }) =>
-                ` transition-color ${isActive ? "text-m-accent underline underline-offset-8" : ""}`
+                ` transition-color ${isActive ? "p-2 px-6 rounded-full transition-all duration-300 bg-m-accent text-white" : ""}`
               }
             >
               <motion.p whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -64,7 +64,7 @@ const NavBar = () => {
             transition={{ duration: 0.2 }}
             className="lg:hidden block left-0 backdrop-blur-3xl right-0  mt-2  border border-gray-200 rounded-3xl shadow-xl overflow-hidden z-50"
           >
-            <div className="p-6 space-y-2">
+            <div className="p-4 space-y-2">
               {NAVITEMS.map((navlink) => (
                 <NavLink
                   key={navlink.path}
@@ -72,7 +72,9 @@ const NavBar = () => {
                   onClick={closeMenu}
                   className={({ isActive }) =>
                     `block transition-colors py-2 text-xl ${
-                      isActive ? "text-m-accent" : ""
+                      isActive
+                        ? "p-2 px-6 rounded-full transition-all duration-300 bg-m-accent text-white"
+                        : ""
                     }`
                   }
                 >
@@ -84,7 +86,6 @@ const NavBar = () => {
 
               <div className="pt-4 border-t border-gray-200">
                 <CustomBtn
-                  isSolid
                   text="Try It now"
                   startIcon="Sparkles"
                   linkpath={`auth/login`}

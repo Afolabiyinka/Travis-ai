@@ -3,7 +3,7 @@ import { useMutation } from "@tanstack/react-query";
 import useToastMessage from "@/lib/useToastMsg";
 import type { UpdateUserPayload } from "@/modules/auth/types/types";
 import { useAuthStore } from "@/store/auth/authStore";
-import { updateUser } from "../services/user/request";
+import { updateUser } from "../services/request";
 
 export default function useUser() {
   const [updatedData, setupdatedData] = useState<UpdateUserPayload>({

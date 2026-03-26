@@ -1,27 +1,22 @@
 import CustomBtn from "@/components/custom/CustomBtn";
-import { Button } from "@/components/modern-ui/button";
 import { Dialog, DialogContent } from "@/components/modern-ui/dialog";
 import Input from "@/modules/auth/components/Input";
-import { useSecurity } from "@/modules/main/hooks/useSecurity";
 import { DialogTrigger } from "@radix-ui/react-dialog";
-import React from "react";
+import { usePassword } from "../hooks/usePassword";
 
-const Password = () => {
-  const [openPassword, setOpenPassword] = React.useState(false);
-
+const ChangePassword = () => {
   const { passwordData, setPasswordData, handleChangePassword, isPending } =
-    useSecurity();
+    usePassword();
   return (
     <div>
-      <Dialog open={openPassword} onOpenChange={setOpenPassword}>
+      <Dialog>
         <DialogTrigger>
-          <Button
-            variant={`outline`}
-            // className="text-m-accent cursor-pointer"
-            onClick={() => setOpenPassword(true)}
-          >
-            Change password
-          </Button>
+          <CustomBtn
+            text="Change Password"
+            isSolid
+            startIcon="Lock"
+            className="w-full"
+          />
         </DialogTrigger>
         <DialogContent>
           <h3 className="text-xl mb-3">Change Password</h3>
@@ -71,4 +66,4 @@ const Password = () => {
   );
 };
 
-export default Password;
+export default ChangePassword;

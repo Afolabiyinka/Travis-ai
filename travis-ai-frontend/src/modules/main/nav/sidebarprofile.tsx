@@ -1,18 +1,17 @@
 import React from "react";
 import { AnimatePresence, motion } from "motion/react";
-import IconButton from "../../../components/custom/iconbutton";
-import CustomBtn from "../../../components/custom/CustomBtn";
+import IconButton from "@/components/custom/iconbutton";
+import CustomBtn from "@/components/custom/CustomBtn";
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "../../../components/modern-ui/avatar";
-import Settings from "@/modules/main/pages/settings/settings";
+} from "@/components/modern-ui/avatar";
+import Settings from "../settings/pages/settings";
 import { useAuthStore } from "@/store/auth/authStore";
 
 const Sidebarprofile = () => {
   const [open, setOpen] = React.useState<boolean>(false);
-  const [settingsModal, setModal] = React.useState<boolean>(false);
   const { user, logout } = useAuthStore();
   return (
     <div
@@ -35,16 +34,8 @@ const Sidebarprofile = () => {
               </div>
 
               {/* SETTINGS */}
-              <div
-                className="flex gap-2 justify-start items-center w-full cursor-pointer"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setModal(true);
-                }}
-              >
-                <IconButton icon="Settings" />
-                <p className="font-inter text-lg font-medium">Settings</p>
-              </div>
+
+              <Settings />
 
               <CustomBtn
                 text="Log Out"
@@ -74,8 +65,6 @@ const Sidebarprofile = () => {
             onClick={() => setOpen(!open)}
           />
         </div>
-
-        <Settings open={settingsModal} setOpen={setModal} />
       </div>
     </div>
   );

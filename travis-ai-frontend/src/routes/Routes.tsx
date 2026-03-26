@@ -8,8 +8,8 @@ const SignUp = lazy(() => import("@/modules/auth/pages/Signup"));
 const FAQs = lazy(() => import("@/modules/landing/pages/FAQs"));
 const Home = lazy(() => import("@/modules/landing/pages/Home"));
 const Reviews = lazy(() => import("@/modules/landing/pages/Reviews"));
-const AiHome = lazy(() => import("@/modules/main/pages/chat/AiHome"));
-const Chat = lazy(() => import("@/modules/main/pages/chat/Chat"));
+const AiHome = lazy(() => import("@/modules/main/chat/pages/AiHome"));
+const Chat = lazy(() => import("@/modules/main/chat/pages/Chat"));
 
 //Others
 

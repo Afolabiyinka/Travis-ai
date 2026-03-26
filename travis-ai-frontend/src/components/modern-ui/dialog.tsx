@@ -21,7 +21,7 @@ const DialogOverlay = React.forwardRef<
       "fixed inset-0 z-50 bg-black/60 backdrop-blur-sm",
       "data-[state=open]:animate-in data-[state=closed]:animate-out",
       "data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0",
-      className
+      className,
     )}
     {...props}
   />
@@ -39,13 +39,13 @@ const DialogContent = React.forwardRef<
     <DialogPrimitive.Content
       ref={ref}
       className={cn(
-        "fixed left-1/2 top-1/2 z-50 grid w-[95%] max-w-lg",
+        "fixed left-1/2 top-1/2 z-50 grid max-w-lg",
         "-translate-x-1/2 -translate-y-1/2",
         "bg-background/90 backdrop-blur-xl border border-white/10",
-        "p-6 sm:p-8 shadow-2xl rounded-xl sm:rounded-2xl",
+        "p-3 sm:p-8 shadow-2xl rounded-xl sm:rounded-2xl",
         "data-[state=open]:animate-in data-[state=closed]:animate-out",
         "data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95",
-        className
+        className,
       )}
       {...props}
     >
@@ -71,7 +71,7 @@ const DialogHeader = ({
   <div
     className={cn(
       "flex flex-col space-y-1.5 text-center sm:text-left",
-      className
+      className,
     )}
     {...props}
   />
@@ -85,7 +85,7 @@ const DialogFooter = ({
   <div
     className={cn(
       "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
-      className
+      className,
     )}
     {...props}
   />

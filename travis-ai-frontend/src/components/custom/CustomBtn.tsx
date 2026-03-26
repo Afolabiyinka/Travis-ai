@@ -11,6 +11,7 @@ interface ButtonProps {
   type?: "submit" | "reset" | "button";
   onClick?: () => void;
   disabled?: boolean;
+  className?: string;
 }
 
 const CustomBtn = ({
@@ -22,6 +23,7 @@ const CustomBtn = ({
   type,
   disabled,
   onClick,
+  className,
 }: ButtonProps) => {
   const Icon = (
     startIcon ? LucideIcon[startIcon] : endIcon ? LucideIcon[endIcon] : null
@@ -29,9 +31,9 @@ const CustomBtn = ({
 
   const baseClasses = `
     relative overflow-hidden
-     rounded-full w-full
-     px-4 py-2 cursor-pointer
-    text-base sm:text-lg font-medium
+     rounded-full w-full 
+     px-4 p-2.5 cursor-pointer
+    text-base sm:text-lg 
     flex items-center justify-center gap-2.5
     transition-all duration-300 ease-out
     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-m-accent/50
@@ -47,8 +49,7 @@ const CustomBtn = ({
       {startIcon && Icon && (
         <Icon
           className={`
-            h-5 w-5 transition-transform duration-300
-            group-hover:-translate-x-0.5
+            h-4.5 w-4.5 transition-transform duration-300
             ${isSolid ? "text-white" : "text-m-accent"}
           `}
         />
@@ -57,18 +58,18 @@ const CustomBtn = ({
       {endIcon && Icon && (
         <Icon
           className={`
-            h-5 w-5 transition-transform duration-300
-            group-hover:translate-x-0.5
+            h-4 w-4 transition-transform duration-300
+          
             ${isSolid ? "text-white" : "text-m-accent"}
           `}
         />
       )}
       {/* Shine effect for solid variant */}
-      {isSolid && (
+      {/* {isSolid && (
         <span className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
           <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/20 to-transparent skew-x-12 group-hover:translate-x-full transition-transform duration-700" />
         </span>
-      )}
+      )} */}
     </>
   );
 
@@ -77,9 +78,8 @@ const CustomBtn = ({
       type={type}
       disabled={disabled}
       onClick={onClick}
-      whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.98 }}
-      className={`group ${baseClasses} ${variantClasses}`}
+      className={`group ${baseClasses} ${variantClasses} ${className}`}
     >
       {content}
     </motion.button>

@@ -2,7 +2,10 @@ import IconButton from "@/components/custom/iconbutton";
 import React from "react";
 import Icon from "@/components/custom/Icon";
 import { AnimatePresence, motion } from "motion/react";
-import { useThemeStore, type Theme } from "@/store/theme/themeStore";
+import {
+  useThemeStore,
+  type Theme,
+} from "@/modules/main/settings/store/theme/themeStore";
 
 const AccountNav = () => {
   const { theme, setTheme } = useThemeStore();

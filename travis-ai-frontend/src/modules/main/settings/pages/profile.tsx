@@ -1,14 +1,12 @@
 import CustomBtn from "@/components/custom/CustomBtn";
 import Input from "@/modules/auth/components/Input";
-import useUser from "../../hooks/useUser";
+import useUser from "../hooks/useUser";
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
 } from "@/components/modern-ui/avatar";
-import { Button } from "@/components/modern-ui/button";
 import { useAuthStore } from "@/store/auth/authStore";
-import { Upload } from "lucide-react";
 
 const Profile = () => {
   const { updatedData, setupdatedData, handleUpdate } = useUser();

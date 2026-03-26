@@ -1,5 +1,5 @@
+import Icon from "@/components/custom/Icon";
 import * as LucideIcon from "lucide-react";
-import { Eye, EyeClosed } from "lucide-react";
 import React from "react";
 
 interface InputProps {
@@ -18,17 +18,13 @@ const Input = ({
   value,
   ...props
 }: InputProps) => {
-  const IconComponent = LucideIcon[startIcon] as React.FC<
-    React.SVGProps<SVGSVGElement>
-  >;
-
   const [showPassword, setShowPassword] = React.useState(false);
 
   return (
-    <span className="border mt-2 w-full  flex  p-1 px-6 h-16 items-center rounded-4xl border-m-accent">
-      <IconComponent />
+    <span className="w-full  flex  p-1 px-6 h-14 items-center rounded-4xl border">
+      <Icon icon={startIcon} />
       <input
-        className="h-full w-full border-0 outline-0 p-1 placeholder:text-md"
+        className="h-full w-full border-0 outline-0 p-1"
         placeholder={placeholder}
         onChange={(e) => onChange?.(e.target.value)}
         type={type === "password" && showPassword ? "text" : type}
@@ -36,12 +32,10 @@ const Input = ({
         value={value}
       />
       {type === "password" && (
-        <span
-          className="pr-2 cursor-pointer"
+        <Icon
           onClick={() => setShowPassword(!showPassword)}
-        >
-          {showPassword ? <Eye /> : <EyeClosed />}
-        </span>
+          icon={showPassword ? "Eye" : "EyeClosed"}
+        />
       )}
     </span>
   );

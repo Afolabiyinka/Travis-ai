@@ -7,9 +7,9 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/modern-ui/tooltip";
+import Icon from "./Icon";
 
-interface IconButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   icon: keyof typeof LucideIcon;
   tooltip?: string;
   onClick?: () => void;
@@ -17,18 +17,13 @@ interface IconButtonProps
 }
 
 const IconButton = ({ icon, tooltip, onClick, isSolid }: IconButtonProps) => {
-  const IconComponent = LucideIcon[icon] as React.FC<
-    React.SVGProps<SVGSVGElement>
-  >;
-
   return (
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
           <motion.button
             onClick={onClick}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
+            whileTap={{ scale: 0.7 }}
             className={`${
               isSolid
                 ? "bg-m-accent text-white shadow"
@@ -36,7 +31,7 @@ const IconButton = ({ icon, tooltip, onClick, isSolid }: IconButtonProps) => {
             } h-10 w-10 stroke-2  rounded-full flex items-center justify-center transition-all duration-200 cursor-pointer p-2`}
             aria-label={tooltip}
           >
-            <IconComponent className="h-10 w-10" />
+            <Icon icon={icon} />
           </motion.button>
         </TooltipTrigger>
         {tooltip && (

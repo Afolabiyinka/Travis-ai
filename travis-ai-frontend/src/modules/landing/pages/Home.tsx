@@ -5,7 +5,7 @@ import CustomBtn from "@/components/custom/CustomBtn";
 import { AnimatedGradientText } from "@/components/modern-ui/animated-gradient-text";
 import darkscreenshot from "@/assets/screenshots/Dark screenshot.png";
 import lightScreenShot from "@/assets/screenshots/Light screenshot.png";
-import { useThemeStore } from "@/store/theme/themeStore";
+import { useThemeStore } from "@/modules/main/settings/store/theme/themeStore";
 
 const Home: React.FC = () => {
   const { theme } = useThemeStore();

@@ -21,7 +21,7 @@ interface UnderlineTabsProps {
 
 const TabContent = memo(
   ({ content, isActive }: { content: React.ReactNode; isActive: boolean }) =>
-    isActive ? <div role="tabpanel">{content}</div> : null
+    isActive ? <div role="tabpanel">{content}</div> : null,
 );
 TabContent.displayName = "TabContent";
 
@@ -138,7 +138,7 @@ export function UnderlineTabs({
       <div
         ref={containerRef}
         role="tablist"
-        className="relative border-b flex items-center"
+        className="relative  flex items-center"
       >
         {visibleTabs.map((tab) => (
           <button
@@ -150,10 +150,10 @@ export function UnderlineTabs({
             aria-selected={activeTab === tab.id}
             onClick={() => onTabClick(tab.id)}
             className={cn(
-              "flex items-center gap-2 px-4 py-2 text-sm font-medium transition-colors",
+              "flex items-center gap-2 px-4 py-2 text-sm font-medium transition-colors  cursor-pointer",
               activeTab === tab.id
-                ? "text-primary"
-                : "text-muted-foreground hover:text-foreground"
+                ? "text-white"
+                : "text-muted-foreground hover:text-foreground",
             )}
           >
             {tab.icon}
@@ -173,14 +173,14 @@ export function UnderlineTabs({
             </Button>
 
             {dropdownOpen && (
-              <div className="absolute right-0 mt-2 w-40 rounded-md border bg-background shadow-lg z-50">
+              <div className="absolute right-0 mt-2 w-40 rounded-md border  shadow-lg z-50">
                 {overflowTabs.map((tab) => (
                   <div
                     key={tab.id}
                     onClick={() => onTabClick(tab.id)}
                     className={cn(
                       "px-4 py-2 text-sm cursor-pointer hover:bg-muted rounded-md flex justify-between",
-                      activeTab === tab.id && "bg-muted font-medium"
+                      activeTab === tab.id && "bg-muted font-medium",
                     )}
                   >
                     {tab.label}
@@ -194,7 +194,7 @@ export function UnderlineTabs({
 
         {isTabVisible(activeTab) && (
           <div
-            className="absolute bottom-0 h-0.5 bg-primary transition-all"
+            className="absolute  h-full -z-50 p-2 rounded-full bg-m-accent transition-all"
             style={{
               transform: `translateX(${underline.x}px)`,
               width: underline.width,

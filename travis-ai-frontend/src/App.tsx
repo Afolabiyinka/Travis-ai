@@ -1,6 +1,6 @@
 import React from "react";
 import RoutesConfig from "./routes/routes-config";
-import { useThemeStore } from "./store/theme/themeStore";
+import { useThemeStore } from "./modules/main/settings/store/theme/themeStore";
 import { Toaster } from "sonner";
 
 function App() {
