@@ -1,11 +1,12 @@
 import React from "react";
-import { MessageCircleMore } from "lucide-react";
 import CustomBtn from "@/components/custom/CustomBtn";
 import { AnimatedGradientText } from "@/components/modern-ui/animated-gradient-text";
 import IconButton from "@/components/custom/iconbutton";
 import { titles } from "@/lib/Random";
 import Sidebarprofile from "./sidebarprofile";
 import { AnimatePresence, motion } from "motion/react";
+import Input from "@/modules/auth/components/Input";
+import Icon from "@/components/custom/Icon";
 
 const SideBar = () => {
   const [asideOpen, setAsideOpen] = React.useState(false);
@@ -73,7 +74,7 @@ const SideBar = () => {
           ${asideOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
         `}
       >
-        <div className="sticky top-0 z-10 p-4 border-b border-gray-200">
+        <div className="sticky top-0 z-10 p-4 border-b border-muted">
           <div className="flex justify-between items-center mb-4">
             <AnimatedGradientText className="text-5xl tracking-wide">
               Travis Ai
@@ -82,26 +83,30 @@ const SideBar = () => {
 
           <div className="flex flex-col w-full gap-3 items-center py-4">
             <span className="w-full flex gap-3 items-center justify-center">
-              <CustomBtn text="New Chat" endIcon="Pen" isSolid={true} />
+              <CustomBtn text="New Chat" startIcon="PenBox" isSolid={true} />
               <IconButton
                 icon="Search"
-                tooltip="Search through your chats"
+                tooltip="Search your chats"
                 onClick={() => setSearchOpen(!searchOpen)}
               />
             </span>
 
             <AnimatePresence>
               {searchOpen && (
-                <motion.input
+                <motion.div
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.2 }}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="border w-full p-3 px-4 rounded-3xl"
-                  value={searchQuery}
-                  placeholder="Search chats..."
-                />
+                  className="w-full"
+                >
+                  <Input
+                    startIcon="Search"
+                    placeholder="Search chats..."
+                    onChange={(e) => setSearchQuery(e)}
+                    value={searchQuery}
+                  />
+                </motion.div>
               )}
             </AnimatePresence>
           </div>
@@ -120,7 +125,7 @@ const SideBar = () => {
                 asideOpen && window.innerWidth < 1024 && setAsideOpen(false)
               }
             >
-              <MessageCircleMore className="stroke-[1px]" />
+              <Icon icon="MessageCircle" />
               <div className="truncate">{title}</div>
             </motion.button>
           ))}

@@ -61,7 +61,7 @@ const Home: React.FC = () => {
           <CustomBtn
             text="Generate Your Excuse ⚡"
             startIcon="Sparkles"
-            linkpath={`auth/login`}
+            linkpath={`login`}
             isSolid={true}
           />
         </motion.div>

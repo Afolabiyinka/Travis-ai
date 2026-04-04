@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import * as LucideIcon from "lucide-react";
 import { Link } from "react-router-dom";
+import Icon from "./Icon";
 
 interface ButtonProps {
   text?: string;
@@ -25,15 +26,11 @@ const CustomBtn = ({
   onClick,
   className,
 }: ButtonProps) => {
-  const Icon = (
-    startIcon ? LucideIcon[startIcon] : endIcon ? LucideIcon[endIcon] : null
-  ) as React.ComponentType<any> | null;
-
   const baseClasses = `
     relative overflow-hidden
      rounded-full w-full 
      px-4 p-2.5 cursor-pointer
-    text-base sm:text-lg 
+    text-sm 
     flex items-center justify-center gap-2.5
     transition-all duration-300 ease-out
     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-m-accent/50
@@ -46,30 +43,9 @@ const CustomBtn = ({
 
   const content = (
     <>
-      {startIcon && Icon && (
-        <Icon
-          className={`
-            h-4.5 w-4.5 transition-transform duration-300
-            ${isSolid ? "text-white" : "text-m-accent"}
-          `}
-        />
-      )}
-      {text && <span className="relative z-10">{text}</span>}
-      {endIcon && Icon && (
-        <Icon
-          className={`
-            h-4 w-4 transition-transform duration-300
-          
-            ${isSolid ? "text-white" : "text-m-accent"}
-          `}
-        />
-      )}
-      {/* Shine effect for solid variant */}
-      {/* {isSolid && (
-        <span className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/20 to-transparent skew-x-12 group-hover:translate-x-full transition-transform duration-700" />
-        </span>
-      )} */}
+      {startIcon && Icon && <Icon className="h-4 w-4" icon={startIcon} />}
+      {text && <span>{text}</span>}
+      {endIcon && Icon && <Icon icon={endIcon} className="h-4 w-4" />}
     </>
   );
 
@@ -79,7 +55,7 @@ const CustomBtn = ({
       disabled={disabled}
       onClick={onClick}
       whileTap={{ scale: 0.98 }}
-      className={`group ${baseClasses} ${variantClasses} ${className}`}
+      className={`group ${baseClasses} ${variantClasses}  ${className}`}
     >
       {content}
     </motion.button>

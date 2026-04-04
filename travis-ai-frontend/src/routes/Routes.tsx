@@ -70,7 +70,7 @@ export const routes: RouteObject[] = [
     ],
   },
   {
-    path: "auth",
+    path: "",
     Component: AuthLayout,
     children: [
       {

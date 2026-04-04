@@ -9,9 +9,9 @@ export const faqs = [
     answer:
       "Absolutely! Perfect for late assignments, missed meetings, or awkward dates. Just use responsibly — we're not liable for overacting.",
   },
-  {
-    question: "Do you save my excuses?",
-    answer:
-      "Only if you tap 'Save'. Free users use localStorage. Pro users get cloud sync across all devices.",
-  },
+  // {
+  //   question: "Do you save my excuses?",
+  //   answer:
+  //     "Only if you tap 'Save'. Free users use localStorage. Pro users get cloud sync across all devices.",
+  // },
 ];

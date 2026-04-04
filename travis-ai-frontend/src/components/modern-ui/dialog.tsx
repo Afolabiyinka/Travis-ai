@@ -52,7 +52,7 @@ const DialogContent = React.forwardRef<
       {children}
 
       {!hideClose && (
-        <DialogPrimitive.Close className="absolute right-4 top-4">
+        <DialogPrimitive.Close className="absolute right-4 top-4" asChild>
           <button className="p-2 rounded-md hover:bg-white/10 transition">
             <Icon icon="X" />
           </button>

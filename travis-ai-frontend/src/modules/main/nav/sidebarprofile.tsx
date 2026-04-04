@@ -9,13 +9,14 @@ import {
 } from "@/components/modern-ui/avatar";
 import Settings from "../settings/pages/settings";
 import { useAuthStore } from "@/store/auth/authStore";
+import Icon from "@/components/custom/Icon";
 
 const Sidebarprofile = () => {
   const [open, setOpen] = React.useState<boolean>(false);
   const { user, logout } = useAuthStore();
   return (
     <div
-      className={`w-full shadow flex gap-1 transition-all duration-500 flex-col justify-between items-center rounded-4xl`}
+      className={`w-full  flex gap-1 transition-all duration-500 flex-col justify-between items-center `}
     >
       <div className="w-full flex gap-3 transition-all duration-500 flex-col justify-between items-center p-1 rounded-3xl">
         <AnimatePresence mode="wait">
@@ -25,11 +26,11 @@ const Sidebarprofile = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.2 }}
-              className="w-full flex flex-col items-center gap-3 rounded-full p-3"
+              className="w-full flex flex-col items-center gap-3 rounded-xl  p-3"
             >
               {/* HELP */}
-              <div className="flex items-center justify-start w-full gap-2 cursor-pointer">
-                <IconButton icon="HelpCircle" />
+              <div className="flex items-center justify-start w-full gap-2 cursor-pointer ">
+                <Icon icon="HelpCircle" />
                 <p>Help</p>
               </div>
 

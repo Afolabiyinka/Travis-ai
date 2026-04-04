@@ -43,7 +43,7 @@ const NavBar = () => {
           <CustomBtn
             text="Login"
             endIcon="LogIn"
-            linkpath={`auth/login`}
+            linkpath={`login`}
             isSolid={true}
           />
         </div>
@@ -62,7 +62,7 @@ const NavBar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden block left-0 backdrop-blur-3xl right-0  mt-2  border border-gray-200 rounded-3xl shadow-xl overflow-hidden z-50"
+            className="lg:hidden block left-0 backdrop-blur-3xl right-0  mt-2  border border-gray-200 rounded-3xl overflow-hidden z-50"
           >
             <div className="p-4 space-y-2">
               {NAVITEMS.map((navlink) => (
@@ -88,7 +88,7 @@ const NavBar = () => {
                 <CustomBtn
                   text="Try It now"
                   startIcon="Sparkles"
-                  linkpath={`auth/login`}
+                  linkpath={`login`}
                 />
               </div>
             </div>
