@@ -24,7 +24,7 @@ const MainLayout = lazy(() => import("@/modules/landing/MainLayout"));
 
 //Proctected route
 
-const ProctectedRoute = lazy(() => import("@/routes/ProctectedRoute"));
+const ProctectedRoute = lazy(() => import("@/shared/routes/ProctectedRoute"));
 
 export const routes: RouteObject[] = [
   {

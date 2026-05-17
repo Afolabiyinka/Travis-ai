@@ -1,5 +1,5 @@
 import React from "react";
-import RoutesConfig from "./routes/routes-config";
+import RoutesConfig from "./shared/routes/routes-config";
 import { useThemeStore } from "./modules/main/settings/store/theme/themeStore";
 import { Toaster } from "sonner";
 import { Loader2 } from "lucide-react";
