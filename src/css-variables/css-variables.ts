@@ -1,0 +1,1 @@
+export const cardStyle = "ring-0 shadow-none border-none w-full h-full"
