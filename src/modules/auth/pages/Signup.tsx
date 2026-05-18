@@ -2,9 +2,9 @@ import CustomBtn from "@/components/custom/CustomBtn";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import useSignUp from "../hooks/useSignup";
-import Loader from "@/components/custom/secondaryloader";
 import Icon from "@/components/custom/Icon";
 import CustomInput from "@/components/custom/custom-input";
+import { Loader2 } from "lucide-react";
 
 const SignUp = () => {
   const { handleSubmit, setSignUpData, signUpData, isLoading } =
@@ -57,33 +57,18 @@ const SignUp = () => {
             }
           />
 
-          {/* <CustomInput
-            startIcon="Lock"
-            placeholder="Confirm Password"
-            type="password"
-            value={signUpData.confirmedPassword}
-            onChange={(val) =>
-              setSignUpData({
-                ...signUpData,
-                confirmedPassword: val,
-              })
-            }
-          /> */}
 
-          {!passwordsMatch && signUpData.confirmedPassword && (
-            <p className="text-sm text-red-500">
-              Passwords do not match
-            </p>
-          )}
+
         </div>
 
         <div>
           {isLoading ? (
             <span className="flex w-full justify-center items-center p-3 rounded-full bg-m-accent text-white">
-              <Loader />
+              <Loader2 className="animate-spin" />
             </span>
           ) : (
             <CustomBtn
+              className="w-full"
               text="Create Account"
               isSolid
               type="submit"

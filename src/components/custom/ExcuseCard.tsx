@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { excuseSuggestions } from "@/lib/Random";
+import { excuseSuggestions } from "@/modules/main/libs/Random";
 
 interface Props {
   onSelect?: (value: string) => void;

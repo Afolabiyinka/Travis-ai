@@ -1,19 +1,19 @@
 import { Navigate, Outlet } from "react-router-dom";
-import { useAuthStore } from "@/store/auth/authStore";
+import { useUser } from "../main/settings/store/authStore";
+import { useGetUser } from "../main/settings/hooks/useGetUser";
+import LoadingContainer from "@/components/custom/loader";
 
 const AuthLayout = () => {
-  const { user } = useAuthStore();
+  const { user } = useUser();
+  const { userLoading } = useGetUser()
 
-  // redirect logged-in users away from auth pages
   if (user) {
     return <Navigate to="/ai/home" replace />;
   }
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center p-4 bg-muted/10">
-      <div className="w-full max-w-md">
-        <Outlet />
-      </div>
+      {userLoading ? <LoadingContainer /> : <Outlet />}
     </div>
   );
 };

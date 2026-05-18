@@ -41,6 +41,7 @@ const CustomInput = ({
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                     onChange?.(e.target.value)
                 }
+                className="text-sm"
             />
             {isPassword && <InputGroupAddon align={`inline-end`}>
                 <Icon

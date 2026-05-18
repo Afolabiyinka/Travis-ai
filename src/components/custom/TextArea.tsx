@@ -4,7 +4,6 @@ import IconButton from "./iconbutton";
 import {
   InputGroup,
   InputGroupAddon,
-  InputGroupButton,
   InputGroupTextarea,
 } from "@/components/ui/input-group";
 
@@ -39,13 +38,13 @@ const TextArea = ({
         }
       />
 
-      <InputGroupButton>
+      <InputGroupAddon>
         <IconButton
           icon="SendHorizonal"
           tooltip="Send Message"
 
         />
-      </InputGroupButton>
+      </InputGroupAddon>
     </InputGroup>
   );
 };

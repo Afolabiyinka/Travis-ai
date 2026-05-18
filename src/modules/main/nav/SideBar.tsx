@@ -1,6 +1,6 @@
 import React from "react";
 import { AnimatedGradientText } from "@/components/custom/animated-gradient";
-import { titles } from "@/lib/Random";
+import { titles } from "@/modules/main/libs/Random";
 import Sidebarprofile from "./sidebarprofile";
 import { AnimatePresence, motion } from "motion/react";
 import Icon from "@/components/custom/Icon";

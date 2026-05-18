@@ -1,7 +1,9 @@
 import { Loader2 } from "lucide-react";
 
-const loader = () => {
-  return <Loader2 className="animate-spin" />;
+const LoadingContainer = () => {
+  return <div className="w-full h-screen flex items-center justify-center">
+    <Loader2 className="animate-spin" />
+  </div>;
 };
 
-export default loader;
+export default LoadingContainer;

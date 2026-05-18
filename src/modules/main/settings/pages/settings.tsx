@@ -12,7 +12,7 @@ import Icon from "@/components/custom/Icon";
 import { DialogTrigger } from "@radix-ui/react-dialog";
 import { useDialogDesc } from "../store/useDialogDesc";
 import DeleteAccount from "../components/delete-account";
-import ChangePassword from "../components/change-password";
+// import ChangePassword from "../components/change-password";
 
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import Themetoggle from "../components/themetoggle";
@@ -26,26 +26,13 @@ const Settings = () => {
       id: "theme",
       label: "Theme",
       icon: <Icon icon={theme === "light" ? "Sun" : "Moon"} />,
-      content: (
-        <Themetoggle />
-      ),
+      content: <Themetoggle />,
     },
     {
       id: "profile",
       label: "Profile",
       icon: <Icon icon="UserPen" />,
-      content: (
-        <Profile />
-      ),
-    },
-
-    {
-      id: "auth",
-      label: "Security",
-      icon: <Icon icon="Shield" />,
-      content: (
-        <ChangePassword />
-      ),
+      content: <Profile />,
     },
     {
       id: "danger zone",
@@ -63,31 +50,36 @@ const Settings = () => {
           <p className="text-lg font-medium">Settings</p>
         </span>
       </DialogTrigger>
-      <DialogContent className="md:max-w-xl w-full">
-        <DialogHeader className="">
-          <DialogTitle className="">Settings</DialogTitle>
+      <DialogContent className="md:max-w-xl w-full max-h-[90vh] flex flex-col">
+        <DialogHeader>
+          <DialogTitle>Settings</DialogTitle>
           <DialogDescription>{title}</DialogDescription>
         </DialogHeader>
 
-        <Tabs
-          className="whitespace-nowrap"
-        // orientation={`${isMobile ? "horizontal" : "vertical"}`}
-        >
-          <TabsList className="h-full">
+        <Tabs defaultValue="theme" className="flex-1 overflow-hidden">
+          <TabsList className="w-full grid grid-cols-3 h-auto">
             {tabs.map(({ icon, id, label }, i) => (
-              <TabsTrigger value={id} className="" key={i}>
-                {icon}{label}
+              <TabsTrigger
+                value={id}
+                key={i}
+                className="flex items-center gap-2"
+              >
+                {icon}
+                <span className="hidden sm:inline">{label}</span>
               </TabsTrigger>
             ))}
           </TabsList>
 
           {tabs.map(({ content, id }, i) => (
-            <TabsContent value={id} key={i} className="flex w-full h-full whitespace-nowrap overflow-auto">
+            <TabsContent
+              value={id}
+              key={i}
+              className="mt-2  overflow-auto max-h-[60vh]"
+            >
               {content}
             </TabsContent>
           ))}
         </Tabs>
-
       </DialogContent>
     </Dialog>
   );

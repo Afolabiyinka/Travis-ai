@@ -24,11 +24,6 @@ const IconButton = ({ icon, tooltip, onClick }: IconButtonProps) => {
             size={`icon-lg`}
             variant={`secondary`}
             onClick={onClick}
-            // whileTap={{ scale: 0.7 }}
-            // className={`${isSolid
-            //   ? "bg-m-accent text-white shadow"
-            //   : "shadow backdrop-blur-3xl hover:bg-accent text-foreground"
-            //   } h-10 w-10 stroke-2  rounded-full flex items-center justify-center transition-all duration-200 cursor-pointer p-2`}
             aria-label={tooltip}
           >
             <Icon icon={icon} />

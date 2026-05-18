@@ -8,12 +8,12 @@ import {
   AvatarImage,
 } from "@/components/ui/avatar";
 import Settings from "../settings/pages/settings";
-import { useAuthStore } from "@/store/auth/authStore";
 import { AnimatedGradientText } from "@/components/custom/animated-gradient";
+import { useUser } from "../settings/store/authStore";
 
 const Sidebarprofile = () => {
   const [open, setOpen] = React.useState<boolean>(false);
-  const { user, logout } = useAuthStore();
+  const { user, logout } = useUser();
   return (
     <div
       className={`w-full  flex gap-1 transition-all duration-500 flex-col justify-between items-center`}

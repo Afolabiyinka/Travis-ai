@@ -1,8 +1,10 @@
-export interface ChangePasswordPayload {
-  id: string;
-  newPassword: string;
-  oldPassword: string;
+export interface User {
+  username: string;
+  email: string;
+  createdAt: string;
+  updatedAt: string;
 }
-export interface DeleteAccountPayload {
-  id: string;
+
+export interface UserResponse {
+  user: User;
 }

@@ -20,5 +20,4 @@ export interface LoginPayload {
 export type UpdateUserPayload = {
   username: string;
   email: string;
-  id: string;
 };

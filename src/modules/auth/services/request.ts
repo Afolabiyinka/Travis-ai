@@ -1,18 +1,18 @@
+import type { ResponseType } from "@/shared/types/response";
 import type { LoginPayload, SignupPayload } from "../types/types";
-import type { SuccessResponse } from "@/types/response";
-import type { AuthUser } from "../types/types";
+import { prodEndpoint } from "@/shared/constants/api";
 
-const baseUrl = import.meta.env.VITE_BASEURL!;
 
 const login = async (
   payload: LoginPayload
-): Promise<SuccessResponse<AuthUser>> => {
-  const res = await fetch(`${baseUrl}/auth/login`, {
+): Promise<ResponseType> => {
+  const res = await fetch(`${prodEndpoint}/api/auth/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(payload),
+    credentials: "include"
   });
 
   const data = await res.json();
@@ -25,11 +25,12 @@ const login = async (
 };
 const signup = async (
   payload: SignupPayload
-): Promise<SuccessResponse<AuthUser>> => {
-  const res = await fetch(`${baseUrl}/auth/signup`, {
+): Promise<ResponseType> => {
+  const res = await fetch(`${prodEndpoint}/api/auth/signup`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
+    credentials: "include"
   });
 
   const data = await res.json();
@@ -41,4 +42,20 @@ const signup = async (
   return data;
 };
 
-export { login, signup };
+const logout = async (): Promise<ResponseType> => {
+  const res = await fetch(`${prodEndpoint}/api/auth/signup`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    credentials: "include"
+  });
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(data.message);
+  }
+
+  return data;
+}
+
+export { login, signup, logout };

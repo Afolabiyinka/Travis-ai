@@ -2,10 +2,10 @@ import CustomBtn from "@/components/custom/CustomBtn";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import useLogin from "../hooks/useLogin";
-import Loader from "@/components/custom/secondaryloader";
 import { Checkbox } from "@/components/ui/checkbox";
 import CustomInput from "@/components/custom/custom-input";
 import { useState } from "react";
+import { Loader2 } from "lucide-react";
 
 const Login = () => {
   const { handlelogin, loginData, setLoginData, isLoading } = useLogin();
@@ -69,7 +69,7 @@ const Login = () => {
         <div className="w-full">
           {isLoading ? (
             <span className="flex justify-center items-center h-12 rounded-full bg-primary text-background">
-              <Loader />
+              <Loader2 className="animate-spin " />
             </span>
           ) : (
             <CustomBtn

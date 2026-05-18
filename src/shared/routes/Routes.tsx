@@ -16,6 +16,7 @@ const Chat = lazy(() => import("@/modules/main/chat/pages/Chat"));
 import NotFound from "@/modules/NotFound";
 import type { RouteObject } from "react-router-dom";
 import Pricing from "@/modules/landing/pages/Pricing";
+import CustomError from "@/modules/ErrorComp";
 
 //Layouts
 const AuthLayout = lazy(() => import("@/modules/auth/AuthLayout"));
@@ -30,6 +31,7 @@ export const routes: RouteObject[] = [
   {
     path: "/ai",
     element: <ProctectedRoute children={<AppLayout />} />,
+    errorElement: <CustomError />,
     children: [
       {
         path: "home",

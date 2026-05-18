@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatedGradientText } from "@/components/custom/animated-gradient";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExcuseGrid } from "@/components/custom/ExcuseCard";
-import { useAuthStore } from "@/store/auth/authStore";
+import { useUser } from "../../settings/store/authStore";
 
 const PHRASES = [
   "Caught slippin' again?",
@@ -13,7 +13,7 @@ const PHRASES = [
 const ROTATION_INTERVAL = 6000;
 
 const AiHome = () => {
-  const { user } = useAuthStore();
+  const { user } = useUser();
   const [phraseIndex, setPhraseIndex] = useState(0);
 
   useEffect(() => {

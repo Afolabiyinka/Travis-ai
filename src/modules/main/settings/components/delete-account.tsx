@@ -6,26 +6,25 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { useState } from "react";
-import useToastMessage from "@/lib/useToastMsg";
+import useToastMessage from "@/shared/hooks/useToastMsg";
 import { useMutation } from "@tanstack/react-query";
-import { useAuthStore } from "@/store/auth/authStore";
 import { deleteAccount } from "@/modules/main/settings/services/request";
-import type { DeleteAccountPayload } from "@/modules/main/settings/types/types";
 import CustomBtn from "@/components/custom/CustomBtn";
 import { CopyButton } from "@/components/custom/copy-button";
-import { cardStyle } from "@/css-variables/css-variables";
+import { cardStyle } from "@/shared/css-variables/css-variables";
 import CustomInput from "@/components/custom/custom-input";
+import { useUser } from "../store/authStore";
 
 const DeleteAccount = () => {
   const [confirmPhrase, setConfirmed] = useState("");
 
   const { toastError, toastSuccess } = useToastMessage();
-  const { user, logout } = useAuthStore();
+  const { logout } = useUser();
 
   const deletePhrase = "delete my account";
 
   const { mutate, isPending } = useMutation({
-    mutationFn: (payload: DeleteAccountPayload) => deleteAccount(payload),
+    mutationFn: () => deleteAccount(),
     onSuccess: () => {
       toastSuccess("Account deleted successfully");
       logout();
@@ -39,13 +38,7 @@ const DeleteAccount = () => {
       toastError("Confirmation phrase does not match");
       return;
     }
-
-    if (!user?._id) {
-      toastError("User not found");
-      return;
-    }
-
-    mutate({ id: user._id });
+    mutate()
   };
 
   return (

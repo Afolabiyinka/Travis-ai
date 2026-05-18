@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { cardStyle } from "@/css-variables/css-variables";
+import { cardStyle } from "@/shared/css-variables/css-variables";
 
 const Themetoggle = () => {
   const { setTheme, theme } = useThemeStore();

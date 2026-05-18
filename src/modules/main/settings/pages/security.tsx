@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import ChangePassword from "../components/change-password";
 import { useDialogDesc } from "../store/useDialogDesc";
 
 const SecuritySettings = () => {
@@ -11,7 +10,6 @@ const SecuritySettings = () => {
   return (
     <div className="mx-auto p-2 rounded-xl space-y-4 justify-center">
       <div className="flex justify-between items-center flex-col gap-4 w-full">
-        <ChangePassword />
 
         {/* <DeleteAccount /> */}
       </div>

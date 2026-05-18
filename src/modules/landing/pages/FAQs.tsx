@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/accordion";
 import { faqs } from "../libs/faqs";
 import { motion } from "framer-motion";
-import { fadeUpVariants } from "@/lib/motion";
+import { fadeUpVariants } from "@/shared/utils/motion";
 const FAQs = () => {
   return (
     <motion.div

@@ -1,11 +1,9 @@
 import CustomBtn from "@/components/custom/CustomBtn";
-import useUser from "../hooks/useUser";
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
 } from "@/components/ui/avatar";
-import { useAuthStore } from "@/store/auth/authStore";
 import { useEffect } from "react";
 import { useDialogDesc } from "../store/useDialogDesc";
 import { Label } from "@/components/ui/label";
@@ -16,11 +14,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import CustomInput from "@/components/custom/custom-input";
-import { cardStyle } from "@/css-variables/css-variables";
+import { cardStyle } from "@/shared/css-variables/css-variables";
+import useEditUser from "../hooks/useEditAccout";
 
 const Profile = () => {
-  const { updatedData, setupdatedData, handleUpdate } = useUser();
-  const { user } = useAuthStore();
+  const { updatedData, setupdatedData, handleUpdate } = useEditUser();
   const { setTitle } = useDialogDesc();
 
   useEffect(() => {
@@ -28,7 +26,7 @@ const Profile = () => {
   }, []);
 
   return (
-    <Card className={`${cardStyle}`} >
+    <Card className={`${cardStyle} p-0`} >
       <CardHeader>
         <CardTitle>Edit profile</CardTitle>
       </CardHeader>
@@ -36,14 +34,14 @@ const Profile = () => {
       <CardContent>
         <form className="space-y-5" onSubmit={handleUpdate}>
           {/* Avatar Section */}
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col md:flex-row items-center gap-4">
             <Avatar className="w-16 h-16">
               <AvatarImage
                 src="https://i.pinimg.com/736x/ce/21/07/ce21071acfd1e9deb34850f70285a5f0.jpg"
                 alt="profile"
               />
               <AvatarFallback>
-                {user?.username?.[0]?.toUpperCase() ?? "U"}
+                {updatedData?.username?.[0]?.toUpperCase() ?? "U"}
               </AvatarFallback>
             </Avatar>
 

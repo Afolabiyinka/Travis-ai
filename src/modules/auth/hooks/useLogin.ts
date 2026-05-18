@@ -1,10 +1,11 @@
-import useToastMessage from "@/lib/useToastMsg";
+import useToastMessage from "@/shared/hooks/useToastMsg";
 import React from "react";
 import type { LoginPayload } from "../types/types";
 import { useMutation } from "@tanstack/react-query";
 import { login } from "../services/request";
 import { useNavigate } from "react-router-dom";
-import { useAuthStore } from "@/store/auth/authStore";
+import { queryClient } from "@/main";
+
 
 export default function useLogin() {
   const [loginData, setLoginData] = React.useState<LoginPayload>({
@@ -14,14 +15,15 @@ export default function useLogin() {
 
   const { toastError, toastSuccess } = useToastMessage();
   const navigate = useNavigate();
-  const { setUser, setToken } = useAuthStore();
 
   const loginMutation = useMutation({
     mutationFn: (payload: LoginPayload) => login(payload),
     onSuccess: (data) => {
+      queryClient.invalidateQueries({
+        queryKey: ["user"],
+      });
       toastSuccess(data.message);
-      setToken(data.token);
-      setUser(data.user);
+
       navigate("/ai/home");
     },
     onError: (err) => {
